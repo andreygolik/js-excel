@@ -7,5 +7,8 @@ extends:
   - eslint:recommended
   - google
 rules:
+  max-len:
+    - error
+    - code: 120
   object-curly-spacing: off
   require-jsdoc: off
