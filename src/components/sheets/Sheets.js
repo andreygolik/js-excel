@@ -9,11 +9,12 @@ export class Sheets {
   getRoot() {
     const $root = $.create('div', 'sheets')
 
-    this.components.forEach((Component) => {
+    this.components = this.components.map((Component) => {
       const $el = $.create('div', Component.className)
       const component = new Component($el)
       $el.innerHTML = component.toHTML()
       $root.append($el)
+      return component
     })
 
     return $root
@@ -21,5 +22,6 @@ export class Sheets {
 
   render() {
     this.$el.append(this.getRoot())
+    this.components.forEach((component) => component.init())
   }
 }
