@@ -1,3 +1,8 @@
+import { Sheets } from '@/components/sheets/Sheets'
 import './scss/index.scss'
 
-console.log('Hello, World!')
+const sheets = new Sheets('#app', {
+  components: [],
+})
+
+console.log('Sheets', sheets)
