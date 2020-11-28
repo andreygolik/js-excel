@@ -18,6 +18,6 @@ export class Formula extends SheetsComponent {
   }
 
   onInput(event) {
-    console.log('Formula: onInput', event)
+    console.log('Formula: onInput', event.target.textContent.trim())
   }
 }
