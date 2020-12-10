@@ -1,12 +1,22 @@
 const CODES = { A: 65, Z: 90 }
 
-const toColumn = (content) => `<div class="column">${content}</div>`
+const toColumn = (content, index) => `
+  <div class="column" data-type="resizable" data-col="${index + 1}">
+    ${content}
+    <div class="col-resize" data-resize="col"></div>
+  </div>
+`
 
-const toCell = (content) => `<div class="cell" contenteditable>${content}</div>`
+const toCell = (_, index) => `
+  <div class="cell" contenteditable data-col="${index + 1}"></div>
+`
 
-const createRow = (content, info) => `
-  <div class="row">
-    <div class="row-info">${info ?? ''}</div>
+const createRow = (content, index) => `
+  <div class="row" data-type="resizable">
+    <div class="row-info">
+      ${index ?? ''}
+      ${index ? '<div class="row-resize" data-resize="row"></div>' : ''}
+    </div>
     <div class="row-data">${content}</div>
   </div>
 `
