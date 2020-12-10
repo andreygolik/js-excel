@@ -7,6 +7,10 @@ extends:
   - eslint:recommended
   - google
 rules:
+  indent:
+    - error
+    - 2
+    - MemberExpression: 1
   semi: off
   max-len:
     - error
